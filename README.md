@@ -23,7 +23,7 @@ This project uses Selenium and RSpec for end-to-end testing of the Wikipedia mai
     bundle install
     ```
 
-3. Update the ChromeDriver path in `config/selenium_config.rb`.
+3. Update the ChromeDriver path in `config/selenium_config.rb`. -> this project uses msedge
 
 ## Running Tests
 
