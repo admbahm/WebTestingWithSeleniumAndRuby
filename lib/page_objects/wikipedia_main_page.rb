@@ -1,12 +1,27 @@
-require_relative 'base_page'  # Require the base page class which provides common functionality for all page objects
+require_relative 'base_page'
 
 class WikipediaMainPage < BasePage
-  # Define constants for the search input field, search button, and language link
+  # Element definitions - constants for the search input field, search button, and language link
   SEARCH_INPUT = { id: 'searchInput' }
   SEARCH_BUTTON = { css: 'button[type="submit"]' }
   LANGUAGE_LINK = { css: 'a#js-link-box-en' } # Adjust the selector as necessary
 
-  # Initialize method for setting up the driver and URL
+  # Properties (Getter functions) - methods for accessing elements and their values
+  def search_input
+    @driver.find_element(SEARCH_INPUT)
+  end
+
+  def search_button
+    @driver.find_element(SEARCH_BUTTON)
+  end
+
+  def language_link
+    @driver.find_element(LANGUAGE_LINK)
+  end
+
+  # Actions - methods for interacting with elements or performing certain tasks on the page
+
+  # Method to initialize the WikipediaMainPage class, setting up the driver and URL
   def initialize(driver)
     super(driver)  # Call the initializer of the parent class (BasePage)
     @url = 'https://www.wikipedia.org/'  # Set the URL for the Wikipedia main page
@@ -19,15 +34,16 @@ class WikipediaMainPage < BasePage
 
   # Method to perform a search on the Wikipedia main page
   def search_for(query)
-    @driver.find_element(SEARCH_INPUT).send_keys(query)  # Find the search input field and enter the query
-    @driver.find_element(SEARCH_BUTTON).click  # Find the search button and click it to submit the search
+    search_input.send_keys(query)  # Find the search input field and enter the query
+    search_button.click  # Find the search button and click it to submit the search
   end
 
   # Method to select the English language on the Wikipedia main page
   def select_language(language = 'English')
-    @driver.find_element(LANGUAGE_LINK).click  # Find the language link element and click it
+    language_link.click  # Find the language link element and click it
   end
 end
+
 
 # Explanation of Comments
 # Require Statement:

@@ -1,6 +1,52 @@
+# Logs
 *.log
+
+# Temporary files
 *.tmp
+
+# Swap files
 *.swp
+
+# macOS specific files
 .DS_Store
+
+# Node.js dependencies
 node_modules/
+
+# Temporary files created by Ruby on Rails
 tmp/
+
+# JetBrains IDE files
+.idea/
+
+# RubyMine specific files
+*.iml
+*.ipr
+*.iws
+
+# Coverage directory used by tools like simplecov
+coverage/
+
+# System specific files
+*.swo
+
+# Bundler config
+/.bundle
+
+# RSpec files
+.rspec
+
+# Yard documentation
+.yardoc
+/_yardoc/
+/.yardoc/
+
+# Byebug command history file.
+.byebug_history
+
+# dotenv environment variables file
+.env
+
+# Ignore local config files
+config/database.yml
+config/secrets.yml
