@@ -19,12 +19,12 @@ RSpec.configure do |config|
     start_time = Time.now
     # This block runs around each individual test.
     # You can add setup code before example.run and teardown code after example.run
-    puts "Starting #{example.description}"
+    # puts "Starting #{example.description}"
     example.run  # This executes the actual test
     end_time = Time.now
     # Additional code can be added here to run after each test, if needed.
     execution_time = end_time - start_time
-    puts "Finished #{example.description}"
-    puts "Execution time for #{example.description}: #{execution_time} seconds"
+    # puts "Finished #{example.description}"
+    # puts "Execution time for #{example.description}: #{execution_time} seconds"
   end
 end
