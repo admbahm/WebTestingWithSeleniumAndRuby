@@ -2,6 +2,7 @@ require 'rspec'
 require_relative '../config/selenium_config'
 require_relative '../lib/page_objects/wikipedia_main_page'
 require_relative '../lib/page_objects/wikipedia_search_results_page'
+Dir[File.join(__dir__, 'api', '**/*.rb')].each { |file| require file }
 
 RSpec.configure do |config|
   # This block runs before each individual test
