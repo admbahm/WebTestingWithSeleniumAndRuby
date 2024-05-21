@@ -42,6 +42,62 @@ To execute the test suite, use the following command:
 rake
 ```
 
+### Running Individual Tests
+
+#### Run a Specific Test File
+
+You can run a specific test file by providing the file path to the `rspec` command:
+
+```sh
+bundle exec rspec spec/api/wikipedia_api_spec.rb
+```
+
+#### Run a Specific Test Example
+
+To run a specific test example within a file, use the `--example` or `-e` flag followed by the description of the test:
+
+```sh
+bundle exec rspec spec/api/wikipedia_api_spec.rb -e "should return a 200 status code for a valid query"
+```
+
+#### Run Tests by Line Number
+
+You can run a specific test by specifying the line number where the test is defined:
+
+```sh
+bundle exec rspec spec/api/wikipedia_api_spec.rb:10
+```
+
+#### Tagging Tests
+
+RSpec supports tagging tests so you can run a specific subset of tests. Here's how to use tags:
+
+##### Tagging a Test
+
+In your test file, you can add tags to tests or groups of tests:
+
+```ruby
+# spec/api/wikipedia_api_spec.rb
+describe 'Wikipedia API', :api do
+  it 'should return a 200 status code for a valid query', :smoke do
+    # Test implementation
+  end
+
+  it 'should return search results for a valid query', :regression do
+    # Test implementation
+  end
+end
+```
+
+##### Running Tagged Tests
+
+You can run tests with a specific tag using the `--tag` option:
+
+```sh
+bundle exec rspec --tag api
+bundle exec rspec --tag smoke
+```
+
 ## Project Structure
 
 The repository is organized as follows:
